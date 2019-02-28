@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="MasterDetailNavigation.Views.MyMasterDetailPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu">
+            <StackLayout Orientation="Vertical">
+                <Button Text="Navigation Page"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="NavigationPage/PageA"/>
+                <Button Text="My Tabbed Page"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="MyTabbedPage?selectedTab=PageC"/>
+                <Button Text="Page D"
+                        Command="{Binding NavigateCommand}"
+                        CommandParameter="PageD"/>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+</MasterDetailPage>
